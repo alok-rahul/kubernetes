@@ -1,0 +1,15 @@
+Kebernetes Command :-
+
+1. kubecetl get pods                       				  -- This will let us know the number of pods running and its detail
+
+2. kubectl describe pods my-pod					          -- This will give you indetail description of a pod.
+
+3. kubectl get replicaset						  -- To get the details of replicaset.
+
+3. Kubectl describe replicaset myapp-replicaset    			  -- You can check events in detail for a given replicaset and help in troubleshooting.
+
+4. kubectl edit replicaset myapp-replicaset				  -- This would open the yaml filee to be edited
+
+5. kubectl scale replicaset myapp-replicaset --replocas=2        	  -- This command will ensure that desired pods running is 2.
+
+ 
