@@ -50,4 +50,4 @@ Rollout:-
 17.  kubectl run nginx --image=nginx					-- Kubectl run commmand creates tthe deployment named nginx, this is another metho to create deploym										ent with just images. Replicasets and pods are created automatically.
 
 
-
+18.  kubectl create -f deployment.yaml --record                       --- This record command at the end records the history of rollout.
