@@ -50,4 +50,11 @@ Rollout:-
 17.  kubectl run nginx --image=nginx					-- Kubectl run commmand creates tthe deployment named nginx, this is another metho to create deploym										ent with just images. Replicasets and pods are created automatically.
 
 
-18.  kubectl create -f deployment.yaml --record                       --- This record command at the end records the history of rollout.
+18.  kubectl create -f deployment.yaml --record                       --- This record command at the end records the history of rollout
+
+
+19.  kubectl set image deployment myapp-deployment nginx=nginx:1.18-perl --record           -- This command can be used instead of kubectl edit deployment command, where you edit the temperory yaml file created by k8s to apply new deployment as mentioned in command 20.
+
+20.  kubectl edit deployment myapp-deployment --record                         >> This command will open the temperory file to make the changes which you can save and it will be applied automatically to the exiing resources. Please note the definition file of deployment does not change in this case.
+
+
