@@ -26,3 +26,28 @@ Kebernetes Command :-
 
 
 10.  kubectl get all							  -- To list down all the objects created.
+
+Rollout:-
+
+11. kubectl rollout status deployment/myapp-deployment			-- Command to check the status of the deployment named myapp-deplyment.
+
+
+12.  kubectl rollout history deployment/myapp-deployment     		-- command to check the history of rollout of given deployment named myapp-deployment
+
+13.  Deployment strategy  --- Recreate and rolling updates, rolling update is the default deployment strategy.
+
+
+14. Change the deployment-definition file with the neccassary changes and run below command to implement change :-
+
+    kubectl apply -f deployment-definition.yaml
+
+15.  kubectl set image deployment/myapp-deployment nginx=nginx:1.9.1      -- This command will change the image version and rollout the changes in pods but definition file 											will not have the latest change.
+
+16. kubectl rollout undo deployment/myapp-deployment                       -- This command will undo the changes in previos deployment.
+
+
+
+17.  kubectl run nginx --image=nginx					-- Kubectl run commmand creates tthe deployment named nginx, this is another metho to create deploym										ent with just images. Replicasets and pods are created automatically.
+
+
+
