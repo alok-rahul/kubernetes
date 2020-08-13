@@ -58,3 +58,13 @@ Rollout:-
 20.  kubectl edit deployment myapp-deployment --record                         >> This command will open the temperory file to make the changes which you can save and it will be applied automatically to the exiing resources. Please note the definition file of deployment does not change in this case.
 
 
+================Commands for the Voting Application =================
+
+1. kubectl create -f voting-app-pod.yaml
+
+2. kubectl create -f voting-app-service.yaml
+
+3. kubectl get pod,svc                                             --- Command to check both the pods and services status at a time, which were created in step 1 and 2. Similarly create all the other pods and services through the definition yaml file.
+
+4. minikube service voting-service -url				   --- Command to get the url of service , if you are running k8s through minikube
+
