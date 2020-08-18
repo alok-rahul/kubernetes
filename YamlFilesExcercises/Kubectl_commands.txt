@@ -68,3 +68,10 @@ Rollout:-
 
 4. minikube service voting-service -url				   --- Command to get the url of service , if you are running k8s through minikube
 
+
+================= Commands===========================================
+
+1. Command to check which user created the metioned pod :-
+
+kubectl exec <pod-name> whoami
+
