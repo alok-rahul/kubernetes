@@ -75,3 +75,8 @@ Rollout:-
 
 kubectl exec <pod-name> whoami
 
+
+2. Command to label a node
+
+kubectl label node <node-name> <key>=<value>
+
