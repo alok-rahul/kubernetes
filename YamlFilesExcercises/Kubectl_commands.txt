@@ -79,4 +79,12 @@ kubectl exec <pod-name> whoami
 2. Command to label a node
 
 kubectl label node <node-name> <key>=<value>
+==================Ingress Module Commands===============================
+
+1.  kubectl get deploy --all-namespaces
+
+
+2.  kubectl -n <namespace-name>  delete ingress <ingress-name>       --- To delete the current ingress
+
+3.  kubctl apply -f <ingress-file>.yaml                              -- to recreate the ingress
 
