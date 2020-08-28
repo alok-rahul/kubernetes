@@ -8,7 +8,7 @@ Kebernetes Command :-
 
 3. Kubectl describe replicaset myapp-replicaset    			  -- You can check events in detail for a given replicaset and help in troubleshooting.
 
-4. kubectl edit replicaset myapp-replicaset				  -- This would open the yaml filee to be edited
+4. kubectl edit replicaset myapp-replicaset				  -- This would open the yaml filee to be edited during runtime. Delete pods and new pods will be created with new configurations.
 
 5. kubectl scale replicaset myapp-replicaset --replicas=2        	  -- This command will ensure that desired pods running is 2.
 
@@ -18,37 +18,32 @@ Kebernetes Command :-
 7. kubectl get deployments						  -- Command to get the details of all deployments.
 
 
-8. kubectl get replicaset                              			  -- By Default when a deployment is created, a replicaset is created as well, you can check the rs 
-									     by this command
+8. kubectl get replicaset     (k get rs)                         			  -- By Default when a deployment is created, a replicaset is created as well, you can check the same  by this command
 
 									 
-9. kubectl get pods                           				-- Number of pods created by deployment
+9. kubectl get pods         (k get po)                  				-- Number of pods created by deployment
 
 
-10.  kubectl get all							  -- To list down all the objects created.
+10.  kubectl get all		(k get all)					  -- To list down all the objects created.
 
 Rollout:-
 
 11. kubectl rollout status deployment/myapp-deployment			-- Command to check the status of the deployment named myapp-deplyment.
 
 
-12.  kubectl rollout history deployment/myapp-deployment     		-- command to check the history of rollout of given deployment named myapp-deployment
-
-13.  Deployment strategy  --- Recreate and rolling updates, rolling update is the default deployment strategy.
+12.  kubectl rollout history deployment/myapp-deployment     		-- command to check the history of rollout of given deployment named myapp-deployment. Deployment strategy  --- Recreate and rolling updates, rolling update is the default deployment strategy.
 
 
-14. Change the deployment-definition file with the neccassary changes and run below command to implement change :-
+14. Change the deployment-definition file with the neccassary changes and run below command to implement change :-         kubectl apply -f deployment-definition.yaml
 
-    kubectl apply -f deployment-definition.yaml
 
-15.  kubectl set image deployment/myapp-deployment nginx=nginx:1.9.1      -- This command will change the image version and rollout the changes in pods but definition file 											will not have the latest change.
+15.  kubectl set image deployment/myapp-deployment nginx=nginx:1.9.1      -- This command will change the image version and rollout the changes in pods but definition file  will not have the latest change.
+
 
 16. kubectl rollout undo deployment/myapp-deployment                       -- This command will undo the changes in previos deployment.
 
 
-
 17.  kubectl run nginx --image=nginx					-- Kubectl run commmand creates tthe deployment named nginx, this is another metho to create deploym										ent with just images. Replicasets and pods are created automatically.
-
 
 18.  kubectl create -f deployment.yaml --record                       --- This record command at the end records the history of rollout
 
