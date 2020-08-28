@@ -50,7 +50,24 @@ Rollout:-
 
 19.  kubectl set image deployment myapp-deployment nginx=nginx:1.18-perl --record           -- This command can be used instead of kubectl edit deployment command, where you edit the temperory yaml file created by k8s to apply new deployment as mentioned in command 20.
 
+
 20.  kubectl edit deployment myapp-deployment --record                         >> This command will open the temperory file to make the changes which you can save and it will be applied automatically to the exiing resources. Please note the definition file of deployment does not change in this case.
+
+
+21.  kubectl describe deployments <deployment-name> | grep -i image       --- This command will show the image used in the given deployment-name.
+
+
+
+22. kubectl get ns --no-headers  | wc -l                                   --- Command to get the number of namespaces present
+
+
+
+23. kubect -n <namespace-name> get pods                                    -- Command to get pods details in a give namespace with name <namespace-name>
+
+
+24. kubectl get pods --all-namespaces  |  grep <pod-name>                  -- Command to find  a pod from all the namespaces present.
+
+
 
 
 ================Commands for the Voting Application =================
