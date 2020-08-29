@@ -76,7 +76,7 @@ Rollout:-
 
 27.  kubectl run httpd --image=httpd:alpine --port=80 --expose --dry-run=client -o yaml > servicepod.yaml     --- This will generate the definition file, which when run will create a pod called httpd which will have service named httpd and target port for service will be 80. 
 
-================Commands for the Voting Application =================
+================Commands for the Voting Application ===================================================================================================================
 
 1. kubectl create -f voting-app-pod.yaml
 
@@ -87,7 +87,7 @@ Rollout:-
 4. minikube service voting-service -url				   --- Command to get the url of service , if you are running k8s through minikube
 
 
-================= Commands===========================================
+================= Commands==============================================================================================================================================
 
 1. Command to check which user created the metioned pod :-
 
@@ -97,7 +97,7 @@ kubectl exec <pod-name> whoami
 2. Command to label a node
 
 kubectl label node <node-name> <key>=<value>
-==================Ingress Module Commands===============================
+==================Ingress Module Commands===============================================================================================================================
 
 1.  kubectl get deploy --all-namespaces
 
@@ -105,4 +105,9 @@ kubectl label node <node-name> <key>=<value>
 2.  kubectl -n <namespace-name>  delete ingress <ingress-name>       --- To delete the current ingress
 
 3.  kubctl apply -f <ingress-file>.yaml                              -- to recreate the ingress
+
+============================= Services types are NodePort, ClusterIP and LoadBalancer ===================================================================================
+
+1.  kubectl expose deployment my-application-deployment --name=my-application-services --target-port=8080 --type=NodePort  --port=8080 --dry-run=client -o yaml > svc.yaml
+                     --- This command will cretae a definition file for service of Nodeport type. Once this file is created, kindly add the NodePort to the value of 30080. This is a very important step
 
