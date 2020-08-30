@@ -111,3 +111,12 @@ kubectl label node <node-name> <key>=<value>
 1.  kubectl expose deployment my-application-deployment --name=my-application-services --target-port=8080 --type=NodePort  --port=8080 --dry-run=client -o yaml > svc.yaml
                      --- This command will cretae a definition file for service of Nodeport type. Once this file is created, kindly add the NodePort to the value of 30080. This is a very important step
 
+
+2. kubectl taint node node01 key=value:effect                            ---- Command to apply taint on a scheduler with a given effect.
+
+
+3. kubectl explain <kubernetes-objects> --recursive  | less               ---- Command to get the format of all the options available for toleration in given object.
+
+
+4.  kubectl explain pod --recursive | grep -A5 tolerations                ---- Command to print 5 lines under the tolerations that can be used inside pod.
+
