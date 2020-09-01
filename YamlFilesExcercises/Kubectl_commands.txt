@@ -120,3 +120,4 @@ kubectl label node <node-name> <key>=<value>
 
 4.  kubectl explain pod --recursive | grep -A5 tolerations                ---- Command to print 5 lines under the tolerations that can be used inside pod.
 
+5. kubectl explain < object > --recusrsive  | grep <attribute>            --- This command will give you the format to be used in yaml file in command line itself.
